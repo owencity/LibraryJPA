@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: 
+    username: 
+    password: 
+    driver-class-name: 
+ 
+  jpa:
+    hibernate:
+      ddl-auto:  none #    스프링 시작할떄 DB에 있는 테이블을 어떻게 처리할지 하는 옵션 , none -> 별다른 조치를 하지 않는다.
+    properties:
+      hiberbate:
+        show_sql: true # JPA를 사용해 SQL을 날릴때 SQL을 보여줄것인가 
+        format_sql: true # SQL을 보여줄때 예브게 포맷팅 할것인가(보기좋게)
+        dialect: org.hibernate.dialect.MySQL8Dialect # 이 옵션으로 DB를 특정하면 조금씩 다른SQL을 수정해준다.
+       
+       
+        
+        
+        
+        
