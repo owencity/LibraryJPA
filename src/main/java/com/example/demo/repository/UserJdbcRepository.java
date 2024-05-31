@@ -1,7 +1,10 @@
 package com.example.demo.repository;
 
+import java.util.List;
+
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import com.example.demo.dto.user.reponse.UserResponse;
 
 
 
@@ -38,4 +41,18 @@ public class UserJdbcRepository {
 		String sql = "INSERT INTO user (name, age) VALUES (?, ?";
 		jdbcTemplate.update(sql, name, age);
 	}
+	
+	public List<UserResponse> getUsers() {
+		String sql = "SELECT * FROM user";
+		return jdbcTemplate.query(sql, (rs, rowNum) -> {
+			long id = rs.getLong("id");
+			String name = rs.getString("name");
+			int age = rs.getInt("age");
+			return new UserResponse(id, name, age);
+			
+		});
+	}
 }
+	
+	
+
