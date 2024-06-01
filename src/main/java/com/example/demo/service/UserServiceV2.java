@@ -3,6 +3,7 @@ package com.example.demo.service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.domain.user.User;
@@ -12,6 +13,7 @@ import com.example.demo.dto.user.request.UserCreateRequest;
 import com.example.demo.dto.user.request.UserUpdateRequest;
 
 
+@Service
 public class UserServiceV2 {
 	
 	private final UserRepository userRepository;
